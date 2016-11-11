@@ -5,43 +5,51 @@
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
+      "root": "src",      // Directorio raiz de nuestra app
+      "outDir": "dist",   // Directorio donde almacenar el código para producción. El que distribuiremos en servidores.
+      "assets": [         // Donde almacena los activos cuya función es decorar la aplicación.
         "assets",
         "favicon.ico"
       ],
-      "index": "index.html",
-      "main": "main.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.json",
-      "prefix": "app",
-      "mobile": false,
+      "index": "index.html",    // Fichero index de la aplicación.
+      "main": "main.ts",        // Fichero TypeScript principal de la aplicación. Importa en el fichero "index" el conjunto
+                                // de dependencias de código que se necesitan para la ejecución de la misma.
+      "test": "test.ts",        // Fichero de tests para la aplicación.
+      "tsconfig": "tsconfig.json",  // Fichero de configuración de TypeScript.    
+      "prefix": "app",          // Prefijo que se antepone a todo los recursos y componentes que generemos en nuestra
+                                // aplicación. Es aconsejable cambiarlo por algo más descriptivo, como las iniciales
+                                // del nombre del proyecto, de nuestra empresa, o de nuestros nombre, si estamos
+                                // desarrollando por nuestra cuenta.
+      "mobile": false,          // La versión actual de Angular CLI no soporta este parámetro, pero la idea detrás de él
+                                // es preparar los rudimentos teniendo en cuenta que la aplicación, evolutivamente
+                                // hablando, pasará a convertirse en una aplicación móvil.
       "styles": [
-        "styles.css"
+        "styles.css"            // Define el nombre del fichero principal CSS. Aquí podríamos indicar que utilizamos .sass,
+                                // por ejemplo.
       ],
       "scripts": [],
-      "environments": {
+      "environments": {         // Configuraciones de ejecución en función del entorno en el que nos encontremos.
+                                // Por defecto tenemos estos tres, pero podríamos tener los que quisieramos.
         "source": "environments/environment.ts",
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "dev": "environments/environment.ts",       // Configuraciones para el entorno de desarrollo.
+        "prod": "environments/environment.prod.ts"  // Configuraciones para el entorno de producción.
       }
     }
   ],
   "addons": [],
   "packages": [],
-  "e2e": {
+  "e2e": {          // Definición de los ficheros de configuración de las herramientas de prueba END-TO-END que usemos.
     "protractor": {
       "config": "./protractor.conf.js"
     }
   },
-  "test": {
+  "test": {         // Definición de los ficheros de configuración de las herramientas de prueba que utilicemos.
     "karma": {
       "config": "./karma.conf.js"
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "css",          // Define con qué vamos a trabajar, ¿css, sass?
     "prefixInterfaces": false,
     "inline": {
       "style": false,

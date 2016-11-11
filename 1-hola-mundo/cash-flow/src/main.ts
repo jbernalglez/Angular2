@@ -1,4 +1,9 @@
 // importaciones de dependencias TypeScript al estilo ES6
+
+// Incluye dos tipo de Importaciones
+//    - Las que definen directamente la ruta del fichero que contiene el código a importar.
+//    - Las que definen nombres simbólicos que se van a buscar a una ruta concreta de nuestra aplicación.
+
 // primero los básicos para compatibilidad con navegadores
 import './polyfills.ts';
 // luego cosas de Angular
