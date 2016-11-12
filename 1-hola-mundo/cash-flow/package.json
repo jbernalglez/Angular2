@@ -11,6 +11,9 @@
     "e2e": "protractor"
   },
   "private": true,
+  
+  // Aqui se establecen las dependencias de ejecución. Estas son las necesarias para que la aplicación funcione en el
+  // terminal del usuario.
   "dependencies": {
     "@angular/common": "~2.1.0",
     "@angular/compiler": "~2.1.0",
@@ -25,6 +28,8 @@
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
   },
+  
+  // Aqui se establecen las dependencias de desarrollo. Estas no son necesarias para el usuario en tiempo de ejecución.
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
     "@types/node": "^6.0.42",
