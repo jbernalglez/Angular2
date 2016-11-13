@@ -3,12 +3,20 @@
 
 ## Guía
 
-- `src\index.html` : Página raíz que contiene al componente raíz `<app-root>`
-- `src\main.ts` : Fichero de arranque de la aplicación que configura y carga el módulo ráiz `AppModule`.
-- `src\app\app.module.ts` : Declaración del módulo raíz y sus dependencias. Exponen al `AppComponent` para el *bootstraping* de la aplicación
-- `src\app\app.component.ts` : Componente raíz `app-root`
-- `src\app\app-routing.component.ts` : Se usará para definir rutas en aplicaciones SPA
-- `src\app\index.ts` : Fichero índice de una carpeta, para facilitar la importación de otros ficheros
+  - `src\index.html` : Página raíz que contiene al componente raíz `<app-root>`
+  - `src\main.ts` : Fichero de arranque de la aplicación que configura y carga el módulo ráiz `AppModule`.
+
+# Una aplicación Angular se compone de:
+#   - Un módulo raíz que se llama, inicialmente, `app.module.ts` que exporta una clase llamada `AppModule` con su
+#     decorador `@NgModule`.
+#   - Un componente raíz llamado, inicialmente, `app.component.ts`
+#   - Un fichero donde se describirán las rutas dentro de la aplicación, inicialmente llamado `app-routing.component.ts`.
+#   - Un index que facilatará la importación de los otros ficheros.
+#
+  - `src\app\app.module.ts` : Declaración del módulo raíz y sus dependencias. Exponen al `AppComponent` para el *bootstraping* de la aplicación
+  - `src\app\app.component.ts` : Componente raíz `app-root`
+  - `src\app\app-routing.component.ts` : Se usará para definir rutas en aplicaciones SPA
+  - `src\app\index.ts` : Fichero índice de una carpeta, para facilitar la importación de otros ficheros
 
 
 ## CLI
