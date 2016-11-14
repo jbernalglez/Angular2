@@ -1,3 +1,7 @@
+// Este módulo lo hemos creado en inicio desde la consola con el comando angular-cli:
+//
+//  ng g m movimientos
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /** Importa un componente que declara y que luego exporta */

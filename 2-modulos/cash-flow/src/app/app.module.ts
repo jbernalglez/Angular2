@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 /** importación de otro módulo de funcionalidad*/ 
 import { MovimientosModule } from './movimientos/movimientos.module'
+
 // decorador que define un módulo
 @NgModule({
   declarations: [
