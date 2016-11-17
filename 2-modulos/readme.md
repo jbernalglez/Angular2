@@ -3,6 +3,7 @@
 Módulos de funcionalidad con Angular 2
 
 ### Guía
+# Las aplicaciones en Angular 2 son modulares y por tanto crearemos tantos módulos como necesitemos.
 # Lo primero que hacemos es crear el módulo "movimientos".
 - `ng g m movimientos` : crea el módulo movimientos en su carpeta y con un componente
 
