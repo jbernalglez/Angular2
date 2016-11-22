@@ -6,7 +6,12 @@ import { PI , uno} from './constantes'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+// Una clase 'componente' expone a la 'vista' todas sus propiedades y métodos.
+//
 export class AppComponent {
+  // Las propiedades son evaluables directamente desde la 'vista'
+  //
   public mostrar: boolean = false;
   private pi: number = PI;
   public radio: number = uno;

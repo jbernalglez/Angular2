@@ -1,15 +1,62 @@
 <h1>
-  {{ title }}
+  {{ title }} <!-- EXPRESIÓN DE INTERPOLACIÓN:
+                    "Dobles llaves que encierran una expresión que se evelúa cada vez que cambian sus parámetros.
+                    En este caso `title` es una variable reconocible por el sistema."
+              -->
 </h1>
 <p>{{ 2 * 2  }}</p>
 <p>{{ nombre  }} trabaja para {{ empresa }}</p>
 <p>Radio: 
+  <!-- EN ESTA PARTE DEL EJEMPLO VAMOS A INCLUIR UNA CAJA DE TEXTO PARA QUE EL USUARIO PUEDA INTRODUCIR UN VALOR:
+
+         - Los CORCHETES representan una `propiedad de un componente`. Lo que escribamos entre las "comillas" después de los corchetes se corresponderá
+           con el 'valor' de la 'propiedad entre los []' asociada al elemento (en este caso el elemento `input`).
+                        Ej.
+                            <elemento [<nom_propiedad>]="valor_propiedad" (<nom_evento>)="valor_evento">
+
+         - Los PARÉNTESIS apuntan un `evento` cualquiera, de cualquier elemento. Lo que pongamos entre las "comillas" se ejecutará cuando el evento en
+           suceda.
+
+           ** EJEMPLO 1 **
+                  
+                      <input type="number" [ngModel]="radio" (ngModelChange)="radio=$event">
+
+                  Aqui la variable "radio" se asocia la propiedad `ngModel` del elemento `input` mediante la utilización del operador "corchete" []. 
+                  Por otro lado `ngModelChange` es un evento que Angular 2 aplica a elementos del tipo del elemento `input`, y que se dispara cuando
+                  el valor que esta en la `caja input` cambia, ejecutándose la expresión entre "" asociada. En este caso cuando el valor de la
+                  `caja input` cambia, la variable "radio" tomará el valor de la variable especial "$event" ('$event' es una variable que mantiene el
+                  valor resultado de ejecutarse el evento).
+
+
+           ** EJEMPLO 2 **
+                  
+                      <input type="number" [(ngModel)]="radio">
+
+                  Este ejemplo es completamente equivalente al ejemplo anterior.
+                  
+                  Utilizando el operador "banana in the box", que es como se le llama coloquialmente al operador [( )],
+                  por su semejanza con dos bananas dentro de una caja, se logra que la variable "radio" se asigne a la propiedad `ngModel` del 
+                  elemento `input` al tiempo que ante cualquier cambio introducido en la `caja input`, el nuevo valor introducido se asigne
+                  dinámicamente a la variable "radio".
+
+                  Esta es la forma de provocar el doble binding típico de Angular, en el que cualquier cambio que se produzca sobre la "Vista" se
+                  refleja dinámicamente sobre el "Modelo" (los datos) y viciversa, cualquier cambio en el "Modelo" se refleja dinámicamente en la "Vista". 
+
+  --> 
   <input 
     type="number" 
     [ngModel]="radio" 
     (ngModelChange)="calcularCircunferencia($event)">
 </p>
 
+<!-- Aquí cuando hagamos "click" en el botón se lanzará el evento `click` que ejecutará la expresión "mostrar=true".
+     También utilizamos la directiva estructural `*ngIf`, que tras evaluar la variable "mostrar", mostrará o no el texto "Hola mundo", en función de 
+     si es verdadera o falsa, respectivamente. 
+
+     Las directivas estructurales siempre comienzan con un '*' y evaluan la expresión asociada entre '""' (en el ejemplo la expresión se corresponde 
+     con la variable "mostrar")
+
+-->
 <input type="button" (click)="mostrar=true" value="Click me " />
 <p *ngIf="mostrar">Hola Mundo</p>
 
