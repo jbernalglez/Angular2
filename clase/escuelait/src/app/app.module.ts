@@ -1,12 +1,68 @@
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MovimientosModule } from './movimientos/';
 import { ClientesModule } from './clientes/clientes.module';
-import { PepeComponent } from './pepe/pepe.component'
+import { HomeComponent } from './home/home.component'
+import { PepeComponent } from './pepe/pepe.component';
+import { SaludoComponent } from './saludo/saludo.component'
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'pepe',
+    component: PepeComponent
+  },
+  {
+    path: 'jose',
+    component: PepeComponent
+  }
+  ,
+  {
+    path: 'pepito',
+    redirectTo: 'pepe'
+  }
+  ,
+  {
+    path: 'saludo',
+    component : SaludoComponent
+  }
+  ,
+  {
+    path: 'saludo/:amigo',
+    component : SaludoComponent
+  }
+  ,
+  {
+    path: '**',
+    redirectTo: 'pepe'
+    //component: HomeComponent
+  }
+
+    /*,children: [
+      {
+        path: 'trabajador', children: [
+          {
+             path: 'otro', component:  HomeComponent
+          }
+        ]
+      },
+      {
+        path: 'vago', loadChildren: './otromodulo'
+      }
+    ]
+  },
+  {
+    path: 'pepevago',
+    loadChildren: './nombredelmodulo'
+  }*/
+];
+
+// guards
 
 /*
 angular.module('app',[
@@ -18,14 +74,17 @@ angular.module('app',[
 @NgModule({
   declarations: [
     AppComponent,
-    PepeComponent
+    PepeComponent,
+    HomeComponent,
+    SaludoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MovimientosModule,
-    ClientesModule
+    ClientesModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent, PepeComponent]
