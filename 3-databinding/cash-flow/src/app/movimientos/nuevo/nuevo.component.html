@@ -5,27 +5,41 @@
   <div>
     <label for="">Formulario</label>
     <!--asignación de un valor a un elemento-->
+    <!--Aquí `ngModel` actúa como un atributo del elemento `input` que recibe un valor.-->
     <input type="text" ngModel="{{movimiento.fecha}}">
   </div>
   <div>
     <label for="">Fecha</label>
     <!--propiedad de solo lectura, desde el modelo hacia el elemento-->
+    <!--Aquí `ngModel`, al estar entre [], actúa como un atributo del elemento `input` que recibe una expresión que se puede evaluar.-->
     <input type="text" [ngModel]="movimiento.fecha">
   </div>
   <div>
     <label for="">Empresa</label>
     <!--propiedad de solo lectura, y evento para escritura-->
+    <!--Aquí `ngModel`, al estar entre [], actúa como un atributo del elemento `input` que recibe una expresión que se puede evaluar.
+        Por su parte el evento `ngModelChange` entre (), hará que al producirse un cambio en el valor de `input` se evalue la expresión entre "" -->
     <input type="text" [ngModel]="movimiento.empresa" (ngModelChange)="movimiento.empresa=$event">
   </div>
   <div>
     <label for="">Importe</label>
     <!--banana in a box, lectura y escritura-->
+    <!--Aquí, el uso del operador [()] tiene el mismo efecto que en el `input` anterior. Es una versión abreviada para hacer lo mismo. --> 
     <input type="number" [(ngModel)]="movimiento.importe">
   </div>
   <div>
     <label for="">Tipo</label>
+    
+    <!-- 
+          "*ngFor" es una directiva estructural que recorre un bucle.
+          Aquí "*ngFor" recibe una expresión que le indica que tiene que recorrer el array "tipos" mediante el iterador "tipo".
+    -->
     <div *ngFor="let tipo of tipos">
-      <!--for es un atributo, requiere una sintaxis especial-->
+      <!--
+            `[attr.for]` hace referencia al atributo `for` del elemento `label`.
+            En Angular2 para acceder a un atributo de un elemento hay que prefijarlo con el prefijo `attr.` seguido del nombre del atributo. 
+            En el caso de las propiedades de los elementos Angular2 no obliga a prefijarlas y pueden nombrarse directamente con su nombre.
+      -->
       <label [attr.for]="tipo.id">
         <!--
          [id]
@@ -62,6 +76,7 @@
     <button (click)="guardarMovimiento()">Guardar</button>
   </div>
   <div>
+    <!-- La siguiente línea muestra en formato JSON "movimiento" -->
     {{ movimiento | json}}
   </div>
 </div>
