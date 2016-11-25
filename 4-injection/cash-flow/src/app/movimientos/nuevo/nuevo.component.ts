@@ -12,6 +12,15 @@ export class NuevoComponent implements OnInit {
   categorias: MaestroTipoModel[] = [];
   movimiento: MovimientoModel;
 
+  // La firma del constructor del componente es el sitio adecuado para reclamar un servicio que será injectado dinámicamente para poderlo
+  // consumir.
+  //
+  // Cualquier argumento que pasemos al constructor TypeScript lo convierte automáticamente en propiedades de la clase, por lo
+  // que no es necesario escribir nada más dentro del constructor.
+  //
+  // En este sentido y teniendo en cuenta que esto, es normal que prácticamente el 100% de los constructores que nos encontremos en una aplicación
+  // Angular2 tengan su body vacío.
+  //
   // las dependencias se declaran como parámetros del constructor  
   /** Este componente depende del objeto DatosService */
   constructor(private datosService: DatosService) {
