@@ -4,9 +4,9 @@ Comunicación entre componentes mediante Servicios Inyectables con datos Observa
 
 ### Guía
 ### Lo primero que vamos a hacer hoy es crear un servicio llamado "datos" dentro del módulo "movimientos". Para ello ejecutamos:
-- `ng g s movimientos/datos` :  crea el servicio de datos, pero no lo engancah en el módulo
-### Hay que tener cuidado con lo servicios al momoento de crearlos, ya que se crean en el sitio que le indiquemos pero no se autorregistran dentro
-### del módulo. Para poderlo usar habrá que registrarlo debidamente dentro del módulo.
+- `ng g s movimientos/datos` :  crea el servicio de datos, pero no lo enganca¡ha en el módulo
+### Hay que tener cuidado con lo servicios al momento de crearlos, ya que se crean en el sitio que le indiquemos pero no se autorregistran dentro
+### del módulo. Para poderlo usarlo habrá que registrarlo debidamente dentro del módulo.
 
 - `movimientos.module.ts` : registro del servicio como un proveedor
 - `nuevo.component.ts` : declara dependencia de DatosService y delega responsabilidad 

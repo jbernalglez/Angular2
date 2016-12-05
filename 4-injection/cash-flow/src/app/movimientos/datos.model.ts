@@ -1,6 +1,6 @@
 /** 
- * declaración de tipos para ayuda al programador
- * los datos suelen ser intanciados en el servidor
+ * declaración de tipos para ayudar al programador
+ * los datos suelen ser instanciados en el servidor
  * en esos casos basta declararlos como interfaces
  * */
 
